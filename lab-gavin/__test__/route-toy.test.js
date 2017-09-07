@@ -86,8 +86,7 @@ describe('Testing toy routes', function() {
           superagent.get(`localhost:3000/api/toy`)
             .type('application/json')
             .end((err, res) => {
-              expect(res.body[res.body.length - 1].name).toEqual('barney');
-              expect(res.body[res.body.length - 1].desc).toEqual('purple dino');
+              expect(res.body[res.body.length -1]).toEqual(this.mockToy._id);
               expect(res.status).toEqual(200);
               done();
             });
